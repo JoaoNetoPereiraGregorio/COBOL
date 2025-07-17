@@ -1,0 +1,11 @@
+        IDENTIFICATION DIVISION. 
+        PROGRAM-ID. teste.
+        DATA DIVISION.
+        WORKING-STORAGE SECTION. 
+        77 WS-NOME PIC X(10).   
+
+        PROCEDURE DIVISION.
+           DISPLAY "DIGITE UM NOME:"
+           ACCEPT WS-NOME
+           DISPLAY "O NOME DIGITADO E " WS-NOME
+           STOP RUN.

@@ -1,0 +1,54 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. SISTEMA-BANCO.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+       *> VARIAVEIS ISOLADAS COM 77
+       77 MENSAGEM-BOAS-VINDAS    PIC A(21) VALUE 'BEM-VINDO AO BANCO!'.
+       77 AGENCIA-NUMERO          PIC 9(4) VALUE 1234.
+
+       *> ESTRUTURA DE CLIENTE COM 01, 05 E 88
+       01 CLIENTE.
+          05 NOME-CLIENTE    PIC A(20) VALUE 'JOAO DA SILVA'.
+          05 SEXO-CLIENTE    PIC X VALUE 'F'.
+             88 MASCULINO    VALUE 'M'.
+             88 FEMININO     VALUE 'F'.
+          05 IDADE-CLIENTE   PIC 99 VALUE 35.
+          05 STATUS-CONTA    PIC X VALUE 'A'.
+             88 ATIVA        VALUE 'A'.
+             88 INATIVA      VALUE 'I'.
+          05 SALDO-CONTA     PIC 9(4)V99 VALUE 5023.75.
+
+       PROCEDURE DIVISION.
+           PERFORM MOSTRA-MENSAGEM *> perform serve para chamar um bloco como se fosse uma funcao em outras linguagens
+           PERFORM MOSTRA-DADOS-CLIENTE
+           PERFORM VERIFICA-SEXO
+           PERFORM VERIFICA-STATUS
+           PERFORM MOSTRA-SALDO
+           STOP RUN.
+
+       MOSTRA-MENSAGEM.
+           DISPLAY MENSAGEM-BOAS-VINDAS
+           DISPLAY "AGENCIA: " AGENCIA-NUMERO.
+
+       MOSTRA-DADOS-CLIENTE.
+           DISPLAY "NOME: " NOME-CLIENTE
+           DISPLAY "IDADE: " IDADE-CLIENTE.
+
+       VERIFICA-SEXO.
+           IF MASCULINO
+               DISPLAY "SEXO: MASCULINO"
+           ELSE
+               DISPLAY "SEXO: FEMININO"
+           END-IF.
+
+       VERIFICA-STATUS.
+           IF ATIVA
+               DISPLAY "STATUS DA CONTA: ATIVA"
+           ELSE
+               DISPLAY "STATUS DA CONTA: INATIVA"
+           END-IF.
+
+       MOSTRA-SALDO.
+           DISPLAY "SALDO DA CONTA: R$ " SALDO-CONTA.

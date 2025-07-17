@@ -1,0 +1,13 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. Perform_For.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       77 CONTADOR    PIC 9(2) VALUE 0.
+
+       PROCEDURE DIVISION.
+           PERFORM VARYING CONTADOR FROM 1 BY 1 UNTIL CONTADOR > 5 *> repete ate a condição ser falsa
+               DISPLAY "VALOR DO CONTADOR: " CONTADOR
+           END-PERFORM
+
+           STOP RUN.
